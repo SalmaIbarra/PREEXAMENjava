@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -50,10 +51,16 @@ public class Activity_Recibo extends AppCompatActivity {
         btnGenerar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnGenerar();
+                if(txtNombre.getText().toString().equals("") || txtNumeroRecibo.getText().toString().equals("") || txtHorasTrabajadas.getText().toString().equals("") || txtHorasExtras.getText().toString().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(),"No deje campos vacios",Toast.LENGTH_SHORT).show();
+
+                }
+                else{
+                    btnGenerar();
+                }
             }
         });
-
 
         btnLimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +69,12 @@ public class Activity_Recibo extends AppCompatActivity {
             }
         });
 
+        btnRegresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnRegresar();
+            }
+        });
 
 
     }
