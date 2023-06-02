@@ -93,7 +93,7 @@ public class ReciboNomina {
 
             }
 
-            resultado= (pagoBase*this.getHorasTrabajadas())+(this.getHorasExtras()*pagoPorHoras*2);
+        resultado= horasTrabajadas*pagoPorHoras+horasTrabajadas*pagoPorHoras*2;
 
             return (float) resultado;
 
